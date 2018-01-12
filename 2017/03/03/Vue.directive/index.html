@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Vue.directive自定义指令的使用"/>
+
+
+
+
+  <meta name="keywords" content="Vue, 切图仔" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="切图仔">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/03/03/Vue.directive/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    <title> Vue.directive自定义指令的使用 - 切图仔 </title>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1596ff68989532a3c9b27cef4ac2260f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">切图仔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">切图仔</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Vue.directive自定义指令的使用
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-03
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/前端日记/">前端日记</a>
+            
+          </div>
+        
+        
+        
+          <a class="post-from"
+            target="_blank"
+            title="http://www.jianshu.com/p/17d4a0d98635"
+            href="http://www.jianshu.com/p/17d4a0d98635">
+            原文地址
+          </a>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-自定义指令实现拖拽"><span class="toc-text">1. 自定义指令实现拖拽</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-图片加载"><span class="toc-text">2. 图片加载</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <blockquote>
+<p>很多教程都是在讲自定义指令的概念和语法,看的相当蛋疼.本文不讲语法和概念,只讲用法.<br>自定义指令基本就是用来操作DOM的,虽然官方推荐数据驱动视图,有时候还是需要自定义指令来操作DOM,指令可复用.<br><a id="more"></a></p>
+</blockquote>
+<h2 id="1-自定义指令实现拖拽"><a href="#1-自定义指令实现拖拽" class="headerlink" title="1. 自定义指令实现拖拽"></a>1. 自定义指令实现拖拽</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-drag</span>&gt;</span>我可以拖拽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Vue.directive(<span class="string">'drag'</span>,</div><div class="line">  inserted:<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;  <span class="comment">//inserted 钩子函数:当元素被插入父元素时触发,可省略</span></div><div class="line">    <span class="keyword">let</span> oDiv=el;  <span class="comment">//el --&gt; 触发的DOM元素</span></div><div class="line">    oDiv.onmousedown=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">let</span> l=e.clientX-oDiv.offsetLeft;</div><div class="line">        <span class="keyword">let</span> t=e.clientY-oDiv.offsetTop;</div><div class="line">        <span class="built_in">document</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">            oDiv.style.left=e.clientX-l+<span class="string">'px'</span>;</div><div class="line">            oDiv.style.top=e.clientY-t+<span class="string">'px'</span>;</div><div class="line">        &#125;;</div><div class="line">        oDiv.onmouseup=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">document</span>.onmousemove=<span class="literal">null</span>;</div><div class="line">            oDiv.onmouseup=<span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>自定义指令还可以引入第三方插件,之前都是用JQuery来构建项目.</p>
+<p>自定义指令的好处就是不管之前是用什么写的JQuery还好或是原生js也好都可以直接拿来封装成自定义指令,不需要重写</p>
+<p>例如这个拖拽:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">Drag.js:</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> oDiv=el;</div><div class="line">    oDiv.onmousedown=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">let</span> l=e.clientX-oDiv.offsetLeft;</div><div class="line">        <span class="keyword">let</span> t=e.clientY-oDiv.offsetTop;</div><div class="line">        <span class="built_in">document</span>.onmousemove=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">            oDiv.style.left=e.clientX-l+<span class="string">'px'</span>;</div><div class="line">            oDiv.style.top=e.clientY-t+<span class="string">'px'</span>;</div><div class="line">        &#125;;</div><div class="line">        oDiv.onmouseup=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">document</span>.onmousemove=<span class="literal">null</span>;</div><div class="line">            oDiv.onmouseup=<span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">Vue:</div><div class="line"><span class="keyword">import</span> drag <span class="keyword">from</span> <span class="string">'drag.js'</span></div><div class="line">Vue.directive(<span class="string">'drag'</span>,drag)</div><div class="line"></div><div class="line">HTML:</div><div class="line">    &lt;div v-drag&gt;我可以拖拽&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="2-图片加载"><a href="#2-图片加载" class="headerlink" title="2. 图片加载"></a>2. 图片加载</h2><p>图片在加载过程中,未加载完成时,使用一个随机的颜色占位,图片加载完后直接显示,可以使用自定义指令来完成<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">HTML:</div><div class="line">    &lt;img v-imgUrl=<span class="string">"url"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span>  <span class="comment">//参数不可以直接填写url地址</span></div><div class="line"></div><div class="line">    data () &#123;</div><div class="line">        url:<span class="string">'src/assets/logo.png'</span></div><div class="line">    &#125;</div><div class="line">Vue:</div><div class="line"></div><div class="line">    Vue.directive(<span class="string">'imgUrl'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">el,binding</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> color=<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">1000000</span>);<span class="comment">//设置随机颜色</span></div><div class="line">        el.style.backgroundColor=<span class="string">'#'</span>+color;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> img=<span class="keyword">new</span> Image();</div><div class="line">        img.src=binding.value;<span class="comment">// --&gt;binding.value指的是指令后的参数</span></div><div class="line">        img.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            el.style.backgroundColor=<span class="string">''</span>;</div><div class="line">            el.src=binding.value;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
+<p>可以使用<a href="http://lodashjs.com/docs/" target="_blank" rel="external">lodash.js</a>工具库<br>vue更多的API整理–&gt;<a href="https://github.com/DrawAChicken/vue--" target="_blank" rel="external">GO</a></p>
+<hr>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/03/07/Vue.solt/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Vue内容分发 &lt;slot&gt; 的使用</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/03/0.5border/">
+        <span class="next-text nav-default">CSS 0.5像素线</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="https://github.com/DrawAChicken" class="iconfont icon-github" title="github" target="_blank"></a>
+        
+      
+    
+      
+        
+          <a href="mailto:283531562@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    powered by
+    <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    theme -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2017 -
+    
+    2018
+
+    <span class="author">Libo Shen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

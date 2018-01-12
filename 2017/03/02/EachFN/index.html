@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="各种For循环方法"/>
+
+
+
+
+  <meta name="keywords" content="JS, 切图仔" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="切图仔">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/03/02/EachFN/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    <title> 各种For循环方法 - 切图仔 </title>
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1596ff68989532a3c9b27cef4ac2260f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">切图仔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">切图仔</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          各种For循环方法
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-02
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/前端日记/">前端日记</a>
+            
+          </div>
+        
+        
+        
+          <a class="post-from"
+            target="_blank"
+            title="http://www.jianshu.com/p/4fd60a05086b"
+            href="http://www.jianshu.com/p/4fd60a05086b">
+            原文地址
+          </a>
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Array-indexOf"><span class="toc-text">1. Array.indexOf();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for："><span class="toc-text">使用for：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-indexOf"><span class="toc-text">使用Array.indexOf():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Array-lastIndexOf"><span class="toc-text">2. Array.lastIndexOf();</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Array-every"><span class="toc-text">3. Array.every();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for"><span class="toc-text">使用for:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-every"><span class="toc-text">使用Array.every():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Array-some"><span class="toc-text">4. Array.some();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for-1"><span class="toc-text">使用for:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-some"><span class="toc-text">使用Array.some():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Array-forEach"><span class="toc-text">5. Array.forEach();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for-2"><span class="toc-text">使用for:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-forEach"><span class="toc-text">使用Array.forEach():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Array-map"><span class="toc-text">6. Array.map();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for-3"><span class="toc-text">使用for:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-map"><span class="toc-text">使用Array.map():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Array-filter"><span class="toc-text">7.   Array.filter();</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#使用for-4"><span class="toc-text">使用for:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用Array-filter"><span class="toc-text">使用Array.filter():</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Array-reduce"><span class="toc-text">8. Array.reduce();</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Array-reduceRight"><span class="toc-text">9.   Array.reduceRight():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-for-of循环-ES6"><span class="toc-text">10. for-of循环(ES6):</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <blockquote>
+<p>小白时期搞什么都是For循环，敲的不亦乐乎。<br>  然而数组Array遍历的方法有九种，面试时也多有被问到，所以分享给大家<br><a id="more"></a></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// W3School : http://www.w3school.com.cn/jsref/jsref_obj_array.asp</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.indexOf();</div><div class="line"><span class="built_in">Array</span>.lastIndexOf();</div><div class="line"><span class="built_in">Array</span>.every();</div><div class="line"><span class="built_in">Array</span>.some();</div><div class="line"><span class="built_in">Array</span>.forEach();</div><div class="line"><span class="built_in">Array</span>.map();</div><div class="line"><span class="built_in">Array</span>.filter();</div><div class="line"><span class="built_in">Array</span>.reduce();</div><div class="line"><span class="built_in">Array</span>.reduceRight();</div><div class="line"><span class="keyword">for</span>-<span class="keyword">of</span>(ES6);</div></pre></td></tr></table></figure>
+<p>  在开发中也非常实用，更高效的操作数组，本文适合新手在撸一遍，请大神轻拍。</p>
+<hr>
+<h2 id="1-Array-indexOf"><a href="#1-Array-indexOf" class="headerlink" title="1. Array.indexOf();"></a>1. Array.indexOf();</h2><p>  indexOf()方法返回在该数组中第一个找到的元素位置，如果它不存在则返回-1。</p>
+<h6 id="使用for："><a href="#使用for：" class="headerlink" title="使用for："></a>使用for：</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [ <span class="string">'apple'</span> , <span class="string">'orange'</span> , <span class="string">'pear'</span> ];</div><div class="line"><span class="keyword">var</span> flag = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = arr.length; i&lt;l; i++)&#123;</div><div class="line">     <span class="keyword">if</span>(arr[i] === <span class="string">'orange'</span>)&#123;</div><div class="line">          flag = <span class="literal">true</span>;</div><div class="line">     &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(flag);</div><div class="line"><span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h6 id="使用Array-indexOf"><a href="#使用Array-indexOf" class="headerlink" title="使用Array.indexOf():"></a>使用Array.indexOf():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [ <span class="string">'apple'</span> , <span class="string">'orange'</span> , <span class="string">'pear'</span> ];</div><div class="line"></div><div class="line"><span class="keyword">var</span> flag=arr.indexOf(<span class="string">'orange'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(flag != <span class="number">-1</span>);</div><div class="line"><span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h2 id="2-Array-lastIndexOf"><a href="#2-Array-lastIndexOf" class="headerlink" title="2. Array.lastIndexOf();"></a>2. Array.lastIndexOf();</h2><p>  和indexOf一样,从后向前查询,indexOf是从前向后查询;</p>
+<h2 id="3-Array-every"><a href="#3-Array-every" class="headerlink" title="3. Array.every();"></a>3. Array.every();</h2><p>  检查数组中的每一项是否符合条件</p>
+<h6 id="使用for"><a href="#使用for" class="headerlink" title="使用for:"></a>使用for:</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">every</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = arr.length; i&lt;l; i++)&#123;</div><div class="line">    <span class="keyword">if</span>(arr[i] &lt; <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(every(arr))</div><div class="line"><span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h6 id="使用Array-every"><a href="#使用Array-every" class="headerlink" title="使用Array.every():"></a>使用Array.every():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> flag = arr.every(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> item &gt; <span class="number">0</span></div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//false</span></div></pre></td></tr></table></figure>
+<h2 id="4-Array-some"><a href="#4-Array-some" class="headerlink" title="4. Array.some();"></a>4. Array.some();</h2><p>检查数组中的某一项是否符合条件</p>
+<h6 id="使用for-1"><a href="#使用for-1" class="headerlink" title="使用for:"></a>使用for:</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">every</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = arr.length; i&lt;l; i++)&#123;</div><div class="line">    <span class="keyword">if</span>(arr[i] &lt; <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(every(arr))</div><div class="line"><span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h6 id="使用Array-some"><a href="#使用Array-some" class="headerlink" title="使用Array.some():"></a>使用Array.some():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> flag = arr.some(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> item &lt; <span class="number">0</span></div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h2 id="5-Array-forEach"><a href="#5-Array-forEach" class="headerlink" title="5. Array.forEach();"></a>5. Array.forEach();</h2><p>遍历数组,代替for</p>
+<h6 id="使用for-2"><a href="#使用for-2" class="headerlink" title="使用for:"></a>使用for:</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = arr.length; i &lt; l; i++)&#123;</div><div class="line">  <span class="built_in">console</span>.log(arr[i]);</div><div class="line">  <span class="comment">//1</span></div><div class="line">  <span class="comment">//2</span></div><div class="line">  <span class="comment">//3</span></div><div class="line">  <span class="comment">//.....</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="使用Array-forEach"><a href="#使用Array-forEach" class="headerlink" title="使用Array.forEach():"></a>使用Array.forEach():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"></div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">val,index,arr</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(val);<span class="comment">//1,2,3....</span></div><div class="line">    <span class="built_in">console</span>.log(index);<span class="comment">//下标</span></div><div class="line">    <span class="built_in">console</span>.log(arr);<span class="comment">//原数组</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="6-Array-map"><a href="#6-Array-map" class="headerlink" title="6. Array.map();"></a>6. Array.map();</h2><p>对数组进行操作,返回一个新数组,在处理服务器数据时经常使用</p>
+<h6 id="使用for-3"><a href="#使用for-3" class="headerlink" title="使用for:"></a>使用for:</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr2=[];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = arr.length; i &lt; l; i++)&#123;</div><div class="line">        arr2[i] = arr[i] + <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr2;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(map(arr));</div><div class="line"><span class="comment">//2,3,4,5,6,7</span></div></pre></td></tr></table></figure>
+<h6 id="使用Array-map"><a href="#使用Array-map" class="headerlink" title="使用Array.map():"></a>使用Array.map():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line"><span class="keyword">var</span> arr2=arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">val,index</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> val + <span class="number">1</span></div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(arr2)</div><div class="line"><span class="comment">//2,3,4,5,6,7</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>map()和forEach()的区别:<br>map()可以使用return返回一个新的数组,而forEach不可以使用return;<br>return是返回一个修改的数组的副本,对原数组没有影响;<br>两个都可以对第三个参数原数组进行修改,可以对原数组修改;</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">val,index,arr</span>)</span>&#123;</div><div class="line">    arr[index] = <span class="string">"123"</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="comment">// "123", "123", "123", "123", "123", "123"</span></div></pre></td></tr></table></figure>
+<h2 id="7-Array-filter"><a href="#7-Array-filter" class="headerlink" title="7.   Array.filter();"></a>7.   Array.filter();</h2><p>返回一个新的匹配条件的数组</p>
+<h6 id="使用for-4"><a href="#使用for-4" class="headerlink" title="使用for:"></a>使用for:</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">-1</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> arr2 = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,j = arr.length; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(arr[i] &lt; <span class="number">0</span>)&#123;</div><div class="line">            arr2.push(arr[i])</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(filter(arr));</div><div class="line"><span class="comment">//-1</span></div></pre></td></tr></table></figure>
+<h6 id="使用Array-filter"><a href="#使用Array-filter" class="headerlink" title="使用Array.filter():"></a>使用Array.filter():</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">-1</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr2=arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">val,index,arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> val &lt; <span class="number">0</span>;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr2);</div><div class="line"><span class="comment">//-1</span></div></pre></td></tr></table></figure>
+<h2 id="8-Array-reduce"><a href="#8-Array-reduce" class="headerlink" title="8. Array.reduce();"></a>8. Array.reduce();</h2><p>接受一个回调函数作为累加器,最终返回一个值.</p>
+<blockquote>
+<p>arr.reduce(callback[, initialValue])</p>
+<ul>
+<li>callback(回调函数,接收四个参数)<ul>
+<li>previousValue(上次调用的回调函数的返回值,或初始值)</li>
+<li>currentValue(目前正在处理的函数元素)</li>
+<li>index(正在处理的元素下标)</li>
+<li>array(调用reduce方法的数组)</li>
+</ul>
+</li>
+<li>initialValue(可选的初始值,作为第一次使用传给previousValue)</li>
+</ul>
+</blockquote>
+<p>有点晦涩难懂,看案例吧</p>
+<p>a). 求最大数:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> flag=arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre,cur,index,arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> pre&gt;cur?pre:cur;</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//4</span></div></pre></td></tr></table></figure></p>
+<p>b). 求和:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> flag=arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre,cur,index,arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> pre+cur</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//10</span></div></pre></td></tr></table></figure></p>
+<p>c). 乘积<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> flag=arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre,cur,index,arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> pre*cur</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//24</span></div></pre></td></tr></table></figure></p>
+<p>reduce就是为这种累加操作设计的,那么initialValue参数有什么用呢?<br>我理解的是用来代替previousValue成为第一个参数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> flag=arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">pre,cur,index,arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> pre+cur</div><div class="line">&#125;,<span class="number">100</span>)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(flag)</div><div class="line"><span class="comment">//110</span></div></pre></td></tr></table></figure></p>
+<h2 id="9-Array-reduceRight"><a href="#9-Array-reduceRight" class="headerlink" title="9.   Array.reduceRight():"></a>9.   Array.reduceRight():</h2><p>用法和参数和reduce一样,不同的是reduce是升序,而reduceRight是降序</p>
+<h2 id="10-for-of循环-ES6"><a href="#10-for-of循环-ES6" class="headerlink" title="10. for-of循环(ES6):"></a>10. for-of循环(ES6):</h2><blockquote>
+<p>forEach好用但是不可以中断循环<br>for-in可以遍历’enumerable’对象,不推荐用来遍历数组,数组的 index 跟普通的对象属性不一样，是重要的数值序列指标。</p>
+</blockquote>
+<p>for-of是ES6引入的一种新方法,比普通for循环简单,也弥补了forEach和for-in的缺点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (var value of myArray) &#123;</div><div class="line">    console.log(value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>for-of可以循环很多种数据类型(数组,对象,字符串等)</p>
+<hr>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/JS/">JS</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/03/03/0.5border/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">CSS 0.5像素线</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="https://github.com/DrawAChicken" class="iconfont icon-github" title="github" target="_blank"></a>
+        
+      
+    
+      
+        
+          <a href="mailto:283531562@qq.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    powered by
+    <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    theme -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy;
+    
+      2017 -
+    
+    2018
+
+    <span class="author">Libo Shen</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
