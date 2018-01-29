@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="码农、爱思考、前端爱好者、穷折腾、三流程序员、二流切图仔"/>
+  <meta name="description" content="weex学习日记：oh my zsh配置ANDROID_HOME的坑"/>
 
 
 
+
+  <meta name="keywords" content="WEEX, 切图仔" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/"/>
+<link rel="canonical" href="http://yoursite.com/2018/01/29/android_home/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -64,7 +66,7 @@
 
 
 
-    <title> 切图仔 </title>
+    <title> weex学习日记：oh my zsh配置ANDROID_HOME的坑 - 切图仔 </title>
     <script>
       var _hmt = _hmt || [];
       (function() {
@@ -184,14 +186,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/01/29/android_home/">weex学习日记：oh my zsh配置ANDROID_HOME的坑</a>
+          weex学习日记：oh my zsh配置ANDROID_HOME的坑
         
       </h1>
 
@@ -213,16 +213,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解"><span class="toc-text">之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解</span></a></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-          
-        
-
-        
-          <blockquote>
+        <blockquote>
 <p>学习weex 启动weex run android  提示找不到$ANDROID_HOME 然后我已经在.bash_profile配置了，还是报错</p>
 </blockquote>
 <p>  年底项目暂时不多，抽出时间提升下自己，开始学习weex。</p>
@@ -247,267 +248,55 @@
 </li>
 </ul>
 <p>这样在每次启动zsh或新建一个窗口初始化的时候  就会更新下配置环境变量<br>唯一不爽的是，配置的zsh输入提示颜色发生了点问题</p>
-          <div class="read-more">
-            <a href="/2018/01/29/android_home/" class="read-more-link">阅读更多</a>
-          </div>
-        
+<a id="more"></a>
+
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/07/Vue.solt/">Vue内容分发 &lt;slot&gt; 的使用</a>
-        
-      </h1>
+      
 
-      <div class="post-meta">
-        <span class="post-time">
-          2017-03-07
-        </span>
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
         
-          <div class="post-category">
+          <div class="post-tags">
             
-              <a href="/categories/前端日记/">前端日记</a>
+              <a href="/tags/WEEX/">WEEX</a>
             
           </div>
         
         
         
-          <a class="post-from"
-            target="_blank"
-            title="http://www.jianshu.com/p/c7f2c21fe76c"
-            href="http://www.jianshu.com/p/c7f2c21fe76c">
-            原文地址
-          </a>
-        
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
-<p>官方文档对于这一块写的比较不好理解,也有点绕弯子.<br>在这写一点个人的理解,和使用姿势…..<br>
-          <div class="read-more">
-            <a href="/2017/03/07/Vue.solt/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/03/Vue.directive/">Vue.directive自定义指令的使用</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-03-03
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/前端日记/">前端日记</a>
-            
-          </div>
-        
-        
-        
-          <a class="post-from"
-            target="_blank"
-            title="http://www.jianshu.com/p/17d4a0d98635"
-            href="http://www.jianshu.com/p/17d4a0d98635">
-            原文地址
-          </a>
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
-<p>很多教程都是在讲自定义指令的概念和语法,看的相当蛋疼.本文不讲语法和概念,只讲用法.<br>自定义指令基本就是用来操作DOM的,虽然官方推荐数据驱动视图,有时候还是需要自定义指令来操作DOM,指令可复用.<br>
-          <div class="read-more">
-            <a href="/2017/03/03/Vue.directive/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/03/0.5border/">CSS 0.5像素线</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-03-03
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/前端日记/">前端日记</a>
-            
-          </div>
-        
-        
-        
-          <a class="post-from"
-            target="_blank"
-            title="http://www.jianshu.com/p/51ef09619592"
-            href="http://www.jianshu.com/p/51ef09619592">
-            原文地址
-          </a>
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
-<p>在移动端1像素的线是很丑的,而border-width设置为0.5px会被自动转成1px;<br>border-width只能为自然数;类似的属性也不可以设置0.5;<br>可以用伪元素+缩放来实现;<br>
-          <div class="read-more">
-            <a href="/2017/03/03/0.5border/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/03/02/EachFN/">各种For循环方法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-03-02
-        </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/前端日记/">前端日记</a>
-            
-          </div>
-        
-        
-        
-          <a class="post-from"
-            target="_blank"
-            title="http://www.jianshu.com/p/4fd60a05086b"
-            href="http://www.jianshu.com/p/4fd60a05086b">
-            原文地址
-          </a>
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <blockquote>
-<p>小白时期搞什么都是For循环，敲的不亦乐乎。<br>  然而数组Array遍历的方法有九种，面试时也多有被问到，所以分享给大家<br>
-          <div class="read-more">
-            <a href="/2017/03/02/EachFN/" class="read-more-link">阅读更多</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
+      <a class="next" href="/2017/03/07/Vue.solt/">
+        <span class="next-text nav-default">Vue内容分发 &lt;slot&gt; 的使用</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -585,6 +374,8 @@
     </div>
 
     
+  
+
 
 
     
