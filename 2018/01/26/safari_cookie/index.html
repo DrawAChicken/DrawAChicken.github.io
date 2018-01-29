@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="码农、爱思考、前端爱好者、穷折腾、三流程序员、二流切图仔"/>
+  <meta name="description" content="Safari浏览器 Cookie丢失字符的坑"/>
 
 
 
+
+  <meta name="keywords" content="Safari, 切图仔" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/categories/前端日记/"/>
+<link rel="canonical" href="http://yoursite.com/2018/01/26/safari_cookie/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -64,11 +66,7 @@
 
 
 
-    <title>
-  
-    前端日记 · 切图仔
-  
-</title>
+    <title> Safari浏览器 Cookie丢失字符的坑 - 切图仔 </title>
     <script>
       var _hmt = _hmt || [];
       (function() {
@@ -189,118 +187,100 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title category">
-          <h2 class="archive-name">前端日记</h2>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Safari浏览器 Cookie丢失字符的坑
+        
+      </h1>
 
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-01-29
-          
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-26
         </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/29/android_home/" class="archive-post-link">
-            weex学习日记：oh my zsh配置ANDROID_HOME的坑
-          </a>
-        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/前端日记/">前端日记</a>
+            
+          </div>
+        
+        
+        
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号-“-”-也不能存在Cookie中。"><span class="toc-text">Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号(“;”)也不能存在Cookie中。</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <blockquote>
+<p>记一次项目开发Safari Cookie无法储存汉字等字符的坑<br><a id="more"></a></p>
+</blockquote>
+<h5 id="Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号-“-”-也不能存在Cookie中。"><a href="#Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号-“-”-也不能存在Cookie中。" class="headerlink" title="Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号(“;”)也不能存在Cookie中。"></a>Safari浏览器不支持将非ASCII字符存入Cookie，所以中文在保存的时候就会出问题，分号(“;”)也不能存在Cookie中。</h5><p>所以需要通过方法去除内容中的分号，在Cookie保存非ASCII字符的时候需要通过UrlEncode / UrlDecode方法来编码和解码问题解决<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie = <span class="string">`key=<span class="subst">$&#123;<span class="built_in">encodeURI</span>(<span class="built_in">JSON</span>.stringify(value))&#125;</span>;`</span></div><div class="line"><span class="keyword">const</span> cookie = <span class="built_in">JSON</span>.parse(<span class="built_in">decodeURI</span>(<span class="built_in">document</span>.cookie));</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
     
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-01-26
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/01/26/safari_cookie/" class="archive-post-link">
-            Safari浏览器 Cookie丢失字符的坑
-          </a>
-        </span>
-      </div>
-    
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-07
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/07/Vue.solt/" class="archive-post-link">
-            Vue内容分发 &lt;slot&gt; 的使用
-          </a>
-        </span>
-      </div>
-    
+
+
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-03
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/03/Vue.directive/" class="archive-post-link">
-            Vue.directive自定义指令的使用
-          </a>
-        </span>
-      </div>
-    
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-03
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/03/0.5border/" class="archive-post-link">
-            CSS 0.5像素线
-          </a>
-        </span>
-      </div>
     
-      
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-02
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/02/EachFN/" class="archive-post-link">
-            各种For循环方法
-          </a>
-        </span>
-      </div>
     
-  </section>
-
-  
-  <nav class="pagination">
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Safari/">Safari</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
     
+      <a class="prev" href="/2018/01/29/android_home/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">weex学习日记：oh my zsh配置ANDROID_HOME的坑</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/07/Vue.solt/">
+        <span class="next-text nav-default">Vue内容分发 &lt;slot&gt; 的使用</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>

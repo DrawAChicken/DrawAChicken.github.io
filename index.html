@@ -223,32 +223,61 @@
 
         
           <blockquote>
-<p>学习weex 启动weex run android  提示找不到$ANDROID_HOME 然后我已经在.bash_profile配置了，还是报错</p>
-</blockquote>
-<p>  年底项目暂时不多，抽出时间提升下自己，开始学习weex。</p>
-<p>  一些顺风顺水但是到安卓虚拟机准备跑项目的时候，提示报错找不到$ANDROID_HOME，然后去找解决方法</p>
-<ol>
-<li>打开终端</li>
-<li>open ~/.bash_profile 要是没有就创建一个 touch .bash_profile</li>
-<li><p>添加以下代码在文件里</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> ANDROID_HOME=~/Library/Android/sdk</div><div class="line"><span class="comment">#我的SDK是随着android studio一起下载的 所以路径在这里，不同下载方式不同路径，可以在设置里面查找</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$ANDROID_HOME</span>/tools:<span class="variable">$ANDROID_HOME</span>/platform-tools</div></pre></td></tr></table></figure>
-</li>
-<li><p>保存文件并关闭</p>
-</li>
-<li><p>更新下配置环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> .bash_profile</div></pre></td></tr></table></figure>
-</li>
-<li><p>命令行输入adb看是否有东西输出，如果没有出现command not found的话就基本上完事儿了。</p>
-</li>
-</ol>
-<h5 id="之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解"><a href="#之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解" class="headerlink" title="之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解"></a>之后坑就来了，每当我新打开一个命令行窗口，或关闭，重启后发现配置失效，打开配置文件没毛病，百思不得其解</h5><p>google各种翻，最后确定是zsh的问题，真的是操了蛋了，最后解决方法是：</p>
-<ul>
-<li>找到User目录下面的.zshrc文件,打开编辑器，在文件的末尾加上<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这样在每次启动zsh或新建一个窗口初始化的时候  就会更新下配置环境变量<br>唯一不爽的是，配置的zsh输入提示颜色发生了点问题</p>
+<p>学习weex 启动weex run android  提示找不到$ANDROID_HOME 然后我已经在.bash_profile配置了，还是报错<br>
           <div class="read-more">
             <a href="/2018/01/29/android_home/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/01/26/safari_cookie/">Safari浏览器 Cookie丢失字符的坑</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-01-26
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/前端日记/">前端日记</a>
+            
+          </div>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <blockquote>
+<p>记一次项目开发Safari Cookie无法储存汉字等字符的坑<br>
+          <div class="read-more">
+            <a href="/2018/01/26/safari_cookie/" class="read-more-link">阅读更多</a>
           </div>
         
       
