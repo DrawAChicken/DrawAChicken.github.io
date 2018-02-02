@@ -5,9 +5,9 @@
   <subtitle>野生前端程序猿</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://mhcdk.com/"/>
   <updated>2018-02-01T09:53:25.854Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://mhcdk.com/</id>
   
   <author>
     <name>Libo Shen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>weex学习日记：oh my zsh配置ANDROID_HOME的坑</title>
-    <link href="http://yoursite.com/2018/01/29/android_home/"/>
-    <id>http://yoursite.com/2018/01/29/android_home/</id>
+    <link href="http://mhcdk.com/2018/01/29/android_home/"/>
+    <id>http://mhcdk.com/2018/01/29/android_home/</id>
     <published>2018-01-29T08:28:00.000Z</published>
     <updated>2018-02-01T09:53:25.854Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="WEEX" scheme="http://yoursite.com/tags/WEEX/"/>
+      <category term="WEEX" scheme="http://mhcdk.com/tags/WEEX/"/>
     
   </entry>
   
   <entry>
     <title>Safari浏览器 Cookie丢失字符的坑</title>
-    <link href="http://yoursite.com/2018/01/26/safari_cookie/"/>
-    <id>http://yoursite.com/2018/01/26/safari_cookie/</id>
+    <link href="http://mhcdk.com/2018/01/26/safari_cookie/"/>
+    <id>http://mhcdk.com/2018/01/26/safari_cookie/</id>
     <published>2018-01-26T05:28:00.000Z</published>
     <updated>2018-02-01T09:52:30.925Z</updated>
     
@@ -55,17 +55,17 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="Safari" scheme="http://yoursite.com/tags/Safari/"/>
+      <category term="Safari" scheme="http://mhcdk.com/tags/Safari/"/>
     
   </entry>
   
   <entry>
     <title>Vue内容分发 &amp;lt;slot&amp;gt; 的使用</title>
-    <link href="http://yoursite.com/2017/03/07/Vue.solt/"/>
-    <id>http://yoursite.com/2017/03/07/Vue.solt/</id>
+    <link href="http://mhcdk.com/2017/03/07/Vue.solt/"/>
+    <id>http://mhcdk.com/2017/03/07/Vue.solt/</id>
     <published>2017-03-07T09:56:00.000Z</published>
     <updated>2018-02-01T09:51:24.281Z</updated>
     
@@ -78,17 +78,17 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+      <category term="Vue" scheme="http://mhcdk.com/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>Vue.directive自定义指令的使用</title>
-    <link href="http://yoursite.com/2017/03/03/Vue.directive/"/>
-    <id>http://yoursite.com/2017/03/03/Vue.directive/</id>
+    <link href="http://mhcdk.com/2017/03/03/Vue.directive/"/>
+    <id>http://mhcdk.com/2017/03/03/Vue.directive/</id>
     <published>2017-03-03T10:16:00.000Z</published>
     <updated>2018-02-01T09:49:35.235Z</updated>
     
@@ -101,17 +101,17 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+      <category term="Vue" scheme="http://mhcdk.com/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>CSS 0.5像素线</title>
-    <link href="http://yoursite.com/2017/03/03/0.5border/"/>
-    <id>http://yoursite.com/2017/03/03/0.5border/</id>
+    <link href="http://mhcdk.com/2017/03/03/0.5border/"/>
+    <id>http://mhcdk.com/2017/03/03/0.5border/</id>
     <published>2017-03-03T09:56:00.000Z</published>
     <updated>2018-02-01T09:48:57.817Z</updated>
     
@@ -124,17 +124,17 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+      <category term="CSS" scheme="http://mhcdk.com/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>各种For循环方法</title>
-    <link href="http://yoursite.com/2017/03/02/EachFN/"/>
-    <id>http://yoursite.com/2017/03/02/EachFN/</id>
+    <link href="http://mhcdk.com/2017/03/02/EachFN/"/>
+    <id>http://mhcdk.com/2017/03/02/EachFN/</id>
     <published>2017-03-02T10:17:00.000Z</published>
     <updated>2018-02-01T09:48:17.774Z</updated>
     
@@ -147,10 +147,10 @@
     
     </summary>
     
-      <category term="前端日记" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
+      <category term="前端日记" scheme="http://mhcdk.com/categories/%E5%89%8D%E7%AB%AF%E6%97%A5%E8%AE%B0/"/>
     
     
-      <category term="JS" scheme="http://yoursite.com/tags/JS/"/>
+      <category term="JS" scheme="http://mhcdk.com/tags/JS/"/>
     
   </entry>
   
